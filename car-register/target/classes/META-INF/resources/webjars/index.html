@@ -1,4 +1,4 @@
-<html >
+<html>
 <head>
 <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
 </head>
@@ -6,31 +6,29 @@
 	<div ng-controller = "appCtrl">
 		<form id="form" ng-submit="mySubmit($scope)" >
 			<label>Nome Carro</label>
-			<input type="text" id='car_name' ng-model="car.car_name"/></br>
+			<input type="text" id='car_name' ng-model="car.carName"/></br>
 			<label>Chassis</label>
 			<input type="text" id='chassis' ng-model="car.chassis"/></br>
 			<label>Placa</label>
-			<input type="text" id='license_plate' ng-model="car.license_plate"/></br> 
+			<input type="text" id='license_plate' ng-model="car.licensePlate"/></br> 
 			<label>Fabricante</label>
 			<input type="text" id='manufacturer' ng-model="car.manufacturer"/></br> 
 			<label>Cor</label>
 			<input type="text" id='color' ng-model="car.color"/></br> 
 			<label>Ano fabricação</label>
-			<input type="date" id='build_year' ng-model="car.build_year"/></br> 
+			<input class="datepicker" type="date" id='build_year' ng-model="car.buildYear"/></br> 
 			<label>Ano modelo</label>
-			<input type="date" id='model_year' ng-model="car.model_year"/></br> 
+			<input class="datepicker" type="date" id='model_year' ng-model="car.modelYear"/></br> 
 			<label>Nome proprietário</label>
-			<input type="text" id='owner_name' ng-model="car.owner_name"/></br> 
+			<input type="text" id='owner_name' ng-model="car.ownerName"/></br> 
 			<label>Número CPF</label>
-			<input type="text" id='document_cpf' ng-model="car.document_cpf"/></br>
+			<input type="text" id='document_cpf' ng-model="car.documentCpf"/></br>
 			<button type="submit">Enviar</button>
 		</form >
 	</div>
-		
 </body>
 
 <script>
-
 	angular.module('ngAppBody', []).controller('appCtrl',
 		['$scope', '$http', function($scope, $http) {
 
@@ -49,7 +47,6 @@
 						alert('Erro ao registrar veículo');
 					}
 				}
-
 			}
 		}]);
 </script>

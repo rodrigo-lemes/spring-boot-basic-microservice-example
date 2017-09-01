@@ -1,5 +1,7 @@
 package com.rodrigo.soukef.microservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -26,9 +28,11 @@ public class CarRegistrationMicroServiceController {
 	@RequestMapping(value = "/includeNewCar", method = RequestMethod.POST, consumes = "application/json")
 	String includeNewCar(@RequestBody String newCar) {
 		Boolean result = false;
+		Car carData = null;
 
 		try {
-			carRegisterRepository.save((new Gson()).fromJson(newCar, Car.class));
+			carData = (new Gson()).fromJson(newCar, Car.class);
+			carRegisterRepository.save(carData);
 			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -36,7 +40,38 @@ public class CarRegistrationMicroServiceController {
 
 		return (new Gson()).toJson(result);
 	}
-	
+
+	@RequestMapping(value = "/findAllCars", method = RequestMethod.GET)
+	String carSearch() {
+
+		List<Car> locatedCars = null;
+
+		try {
+			locatedCars = (List<Car>) carRegisterRepository.findAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return new Gson().toJson(locatedCars);
+	}
+
+	@RequestMapping(value = "/findCarByPlate", consumes = "application/json")
+	public String findCarByPlate(@RequestBody String licensePlate) {
+
+		String result;
+		
+		Car carData = new Car();
+		carData = new Gson().fromJson(licensePlate, carData.getClass());
+		try {
+			carData = carRegisterRepository.findOneByLicensePlate(carData.getLicensePlate());
+			result = new Gson().toJson(carData);
+		} catch (Exception e) {
+			result = "Veículo não localizado";
+		}
+
+		return result;
+	}
+
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(CarRegistrationMicroServiceController.class, args);
 	}

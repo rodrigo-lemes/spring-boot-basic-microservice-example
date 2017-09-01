@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+</head>
+<body ng-app="ngAppBody">
+<div ng-controller="appCtrl">
+<form id="form" ng-submit="mySubmit($scope)">
+<label>Placa</label>
+<input type="text" ng-model="car.licensePlate"/>
+<button type="submit">Enviar</button>
+</form>
+</div>
+</body>
+<script>
+	angular.module('ngAppBody', []).controller('appCtrl',
+		['$scope', '$http', function($scope, $http) {
+
+			var endPoint = "http://localhost:8080/findCarByPlate";
+
+			$scope.mySubmit = function() {
+
+				var data = $scope.car;
+
+				$http.post(endPoint, data).then(successCallback);
+
+				function successCallback(response) {
+						document.write(JSON.stringify(response.data));
+				}
+			}
+		}]);
+</script>
+</html>

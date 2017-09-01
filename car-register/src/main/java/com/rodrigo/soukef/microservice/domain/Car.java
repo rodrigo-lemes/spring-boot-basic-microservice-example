@@ -2,174 +2,159 @@ package com.rodrigo.soukef.microservice.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.springframework.transaction.annotation.Transactional;
+
 @Entity
+@Transactional
 public class Car {
 
 	@Id
 	@GeneratedValue
+	@Column(name = "id")
 	private Long id;
-	private String car_name;
+	@Column(name = "car_name")
+	private String carName;
+	@Column(name = "chassis")
 	private String chassis;
-	private String license_plate;
+	@Column(name = "license_plate")
+	private String licensePlate;
+	@Column(name = "manufacturer")
 	private String manufacturer;
+	@Column(name = "color")
 	private String color;
-	private Date build_year;
-	private Date model_year;
-	private String owner_name;
-	private Long document_cpf;
-
+	@Column(name = "build_year")
+	private Date buildYear;
+	@Column(name = "model_year")
+	private Date modelYear;
+	@Column(name = "owner_name")
+	private String ownerName;
+	@Column(name = "document_cpf")
+	private Long documentCpf;
 	/**
 	 * @return the id
 	 */
 	public Long getId() {
 		return id;
 	}
-
 	/**
-	 * @param id
-	 *            the id to set
+	 * @param id the id to set
 	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	/**
-	 * @return the car_name
+	 * @return the carName
 	 */
-	public String getCar_name() {
-		return car_name;
+	public String getCarName() {
+		return carName;
 	}
-
 	/**
-	 * @param car_name
-	 *            the car_name to set
+	 * @param carName the carName to set
 	 */
-	public void setCar_name(String car_name) {
-		this.car_name = car_name;
+	public void setCarName(String carName) {
+		this.carName = carName;
 	}
-
 	/**
 	 * @return the chassis
 	 */
 	public String getChassis() {
 		return chassis;
 	}
-
 	/**
-	 * @param chassis
-	 *            the chassis to set
+	 * @param chassis the chassis to set
 	 */
 	public void setChassis(String chassis) {
 		this.chassis = chassis;
 	}
-
 	/**
-	 * @return the license_plate
+	 * @return the licensePlate
 	 */
-	public String getLicense_plate() {
-		return license_plate;
+	public String getLicensePlate() {
+		return licensePlate;
 	}
-
 	/**
-	 * @param license_plate
-	 *            the license_plate to set
+	 * @param licensePlate the licensePlate to set
 	 */
-	public void setLicense_plate(String license_plate) {
-		this.license_plate = license_plate;
+	public void setLicensePlate(String licensePlate) {
+		this.licensePlate = licensePlate;
 	}
-
 	/**
 	 * @return the manufacturer
 	 */
 	public String getManufacturer() {
 		return manufacturer;
 	}
-
 	/**
-	 * @param manufacturer
-	 *            the manufacturer to set
+	 * @param manufacturer the manufacturer to set
 	 */
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
-
 	/**
 	 * @return the color
 	 */
 	public String getColor() {
 		return color;
 	}
-
 	/**
-	 * @param color
-	 *            the color to set
+	 * @param color the color to set
 	 */
 	public void setColor(String color) {
 		this.color = color;
 	}
-
 	/**
-	 * @return the build_year
+	 * @return the buildYear
 	 */
-	public Date getBuild_year() {
-		return build_year;
+	public Date getBuildYear() {
+		return buildYear;
+	}
+	/**
+	 * @param buildYear the buildYear to set
+	 */
+	public void setBuildYear(Date buildYear) {
+		this.buildYear = buildYear;
+	}
+	/**
+	 * @return the modelYear
+	 */
+	public Date getModelYear() {
+		return modelYear;
+	}
+	/**
+	 * @param modelYear the modelYear to set
+	 */
+	public void setModelYear(Date modelYear) {
+		this.modelYear = modelYear;
+	}
+	/**
+	 * @return the ownerName
+	 */
+	public String getOwnerName() {
+		return ownerName;
+	}
+	/**
+	 * @param ownerName the ownerName to set
+	 */
+	public void setOwnerName(String ownerName) {
+		this.ownerName = ownerName;
+	}
+	/**
+	 * @return the documentCpf
+	 */
+	public Long getDocumentCpf() {
+		return documentCpf;
+	}
+	/**
+	 * @param documentCpf the documentCpf to set
+	 */
+	public void setDocumentCpf(Long documentCpf) {
+		this.documentCpf = documentCpf;
 	}
 
-	/**
-	 * @param build_year
-	 *            the build_year to set
-	 */
-	public void setBuild_year(Date build_year) {
-		this.build_year = build_year;
-	}
-
-	/**
-	 * @return the model_year
-	 */
-	public Date getModel_year() {
-		return model_year;
-	}
-
-	/**
-	 * @param model_year
-	 *            the model_year to set
-	 */
-	public void setModel_year(Date model_year) {
-		this.model_year = model_year;
-	}
-
-	/**
-	 * @return the owner_name
-	 */
-	public String getOwner_name() {
-		return owner_name;
-	}
-
-	/**
-	 * @param owner_name
-	 *            the owner_name to set
-	 */
-	public void setOwner_name(String owner_name) {
-		this.owner_name = owner_name;
-	}
-
-	/**
-	 * @return the document_cpf
-	 */
-	public Long getDocument_cpf() {
-		return document_cpf;
-	}
-
-	/**
-	 * @param document_cpf
-	 *            the document_cpf to set
-	 */
-	public void setDocument_cpf(Long document_cpf) {
-		this.document_cpf = document_cpf;
-	}
 
 }

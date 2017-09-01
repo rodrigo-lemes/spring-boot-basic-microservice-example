@@ -8,4 +8,6 @@ import com.rodrigo.soukef.microservice.domain.Car;
 @Repository
 public interface CarRegisterCrud extends CrudRepository<Car, Long> {
 
+public Car findOneByLicensePlate(String licensePlate);
+
 }
