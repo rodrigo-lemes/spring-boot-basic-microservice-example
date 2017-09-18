@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.rodrigo.soukef.microservice.controller.CarRegistrationMicroServiceControllerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.238 sec - in com.rodrigo.soukef.microservice.controller.CarRegistrationMicroServiceControllerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.019 sec - in com.rodrigo.soukef.microservice.controller.CarRegistrationMicroServiceControllerTest
