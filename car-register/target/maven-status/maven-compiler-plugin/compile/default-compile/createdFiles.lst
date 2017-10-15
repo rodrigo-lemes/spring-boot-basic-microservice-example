@@ -1,3 +1,3 @@
-com\rodrigo\soukef\microservice\domain\Car.class
-com\rodrigo\soukef\microservice\controller\CarRegistrationMicroServiceController.class
-com\rodrigo\soukef\microservice\crud\CarRegisterCrud.class
+com/rodrigo/soukef/microservice/controller/CarRegistrationMicroServiceController.class
+com/rodrigo/soukef/microservice/domain/Car.class
+com/rodrigo/soukef/microservice/crud/CarRegisterCrud.class

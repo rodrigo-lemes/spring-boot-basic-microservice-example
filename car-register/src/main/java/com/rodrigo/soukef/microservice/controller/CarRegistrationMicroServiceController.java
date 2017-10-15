@@ -3,13 +3,16 @@ package com.rodrigo.soukef.microservice.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
 import com.rodrigo.soukef.microservice.crud.CarRegisterCrud;
@@ -70,4 +73,16 @@ public class CarRegistrationMicroServiceController {
 
 		return result;
 	}
+
+	@RequestMapping(value = "/uploadFile", method=RequestMethod.POST)
+	public void uploadFile(@RequestParam("file") MultipartFile file ) {
+		
+		file = null;
+
+	}
+
+	public static void main(String[] args) throws Exception {
+		SpringApplication.run(CarRegistrationMicroServiceController.class, args);
+	}
+
 }
