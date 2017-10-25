@@ -1,4 +1,4 @@
-/*package com.rodrigo.soukef.microservice.controller;
+package com.rodrigo.soukef.microservice.controller;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -64,4 +64,3 @@ public class CarRegistrationMicroServiceControllerTest {
 	}
 
 }
-*/
